@@ -10,9 +10,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    //  @OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    // @JoinColumn(name = "id2")
-    // @Column(name = "car")
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCar", referencedColumnName = "id")
     private Car car;
